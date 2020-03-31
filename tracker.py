@@ -27,6 +27,12 @@ BASE_URL = 'https://www.trackcorona.live/api/'
 # Helpers #
 ###########
 def print_stats(scope, confirmed, dead, recovered):
+    if not confirmed:
+        confirmed = 0
+    if not dead:
+        dead = 0
+    if not recovered:
+        recovered = 0
     print( f'-----{scope.upper()} COVID-19 Stats-----' )
     print( f'[*] # of confirmed cases: {confirmed:,}' )
     print( f'[+] # recovered: {recovered:,}' )
